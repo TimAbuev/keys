@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Header from '../header/Header'
+import Header from '../header/Header';
+import Tasks from '../tasks/Tasks';
 
 function App() {
 
@@ -19,17 +20,19 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path="/" element={
-          <Header/>
+          <>
+            <Header />
+          </>
         }>
         </Route>
 
         <Route path="/tasks" element={
           <>
-
+            <Header />
+            <Tasks />
           </>
         }>
         </Route>
-
       </Routes>
 
     </div>
