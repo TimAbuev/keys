@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../header/Header';
 import Tasks from '../tasks/Tasks';
+import Footer from '../footer/Footer';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={
           <>
             <Header />
+            <Footer />
           </>
         }>
         </Route>
@@ -19,6 +21,7 @@ function App() {
           <>
             <Header />
             <Tasks />
+            <Footer />
           </>
         }>
         </Route>
