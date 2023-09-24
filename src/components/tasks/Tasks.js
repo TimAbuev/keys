@@ -11,11 +11,56 @@ function charConcat(str) {
   return res;
 }
 
+function to24hourtime(hour, minute, period) {
+  let result;
+  // AM
+  if (period === 'am') {
+
+    if (hour === 12) {
+      if (minute < 10) {
+        result = `0${hour - 12}0${minute}`;
+      } else {
+        result = `0${hour - 12}${minute}`;
+      }
+    }
+
+    else if (hour < 10 && minute < 10) {
+      result = `0${hour}0${minute}`;
+    } else if (hour < 10) {
+      result = `0${hour}${minute}`;
+    } else if (minute < 10) {
+      result = `${hour}0${minute}`;
+    } else {
+      result = `${hour}${minute}`;
+    }
+  }
+  // PM 
+  else if (period === 'pm') {
+
+    if (hour === 12) {
+      if (minute < 10) {
+        result = `120${minute}`;
+      } else {
+        result = `12${minute}`;
+      }
+    }
+
+    else if (minute < 10) {
+      result = `${hour + 12}0${minute}`;
+    } else {
+      result = `${hour + 12}${minute}`;
+    }
+
+  }
+
+  return result;
+}
+
 function Tasks() {
   return (
     <section className="tasks">
-      <p>Здесь будут задания</p>
-      <p>Резульат работы функции charConcat: {charConcat('honda')}</p>
+      <p>Результат работы функции charConcat: {charConcat('honda')}</p>
+      <p>Результат работы функции to24hourtime: {to24hourtime(12, 0, 'pm')}</p>
     </section>
   );
 }
