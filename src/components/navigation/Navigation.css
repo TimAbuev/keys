@@ -2,7 +2,7 @@
   width: max-content;
   display: inline-block;
   text-decoration: none;
-  color: black;
+  color: var(--font-color);
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;

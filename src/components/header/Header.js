@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <header className='header'>
-      <p>рыбаТекст</p>
+      <p>Welcome</p>
     </header>
   );
 }
