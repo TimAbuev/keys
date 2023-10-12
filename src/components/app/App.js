@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../header/Header';
@@ -6,12 +7,18 @@ import Footer from '../footer/Footer';
 
 function App() {
 
+  const [theme, setTheme] = React.useState(false);
+
+  function handleTheme() {
+    setTheme(!theme);
+  }
+
   return (
-    <div className='app'>
+    <div className={`app ${theme ? 'app_theme_light' : ''}`}>
       <Routes>
         <Route path="/" element={
           <>
-            <Header />
+            <Header handleTheme={handleTheme}/>
             <Footer />
           </>
         }>
