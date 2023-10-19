@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from '../header/Header';
 import Tasks from '../tasks/Tasks';
 import Footer from '../footer/Footer';
+import Experience from '../experience/Experience';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            <Header handleTheme={handleTheme}/>
+            <Header handleTheme={handleTheme} />
             <Footer />
           </>
         }>
@@ -28,6 +29,15 @@ function App() {
           <>
             <Header />
             <Tasks />
+            <Footer />
+          </>
+        }>
+        </Route>
+
+        <Route path="/experience" element={
+          <>
+            <Header />
+            <Experience/>
             <Footer />
           </>
         }>

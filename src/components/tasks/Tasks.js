@@ -56,11 +56,13 @@ function to24hourtime(hour, minute, period) {
   return result;
 }
 
+
+
 function Tasks() {
   return (
     <section className="tasks">
       <p>Результат работы функции charConcat: {charConcat('honda')}</p>
-      <p>Результат работы функции to24hourtime: {to24hourtime(12, 0, 'pm')}</p>
+      <p>Результат работы функции to24hourtime: {to24hourtime(1, 0, 'pm')}</p>
     </section>
   );
 }
