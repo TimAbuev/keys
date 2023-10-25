@@ -5,6 +5,7 @@ import Header from '../header/Header';
 import Tasks from '../tasks/Tasks';
 import Footer from '../footer/Footer';
 import Experience from '../experience/Experience';
+import Recursion from '../recursion/Recursion';
 
 function App() {
 
@@ -37,7 +38,16 @@ function App() {
         <Route path="/experience" element={
           <>
             <Header />
-            <Experience/>
+            <Experience />
+            <Footer />
+          </>
+        }>
+        </Route>
+
+        <Route path="/recursion" element={
+          <>
+            <Header />
+            <Recursion />
             <Footer />
           </>
         }>

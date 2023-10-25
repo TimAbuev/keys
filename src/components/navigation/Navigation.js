@@ -26,6 +26,13 @@ function Navigation() {
       >
         эксперименты
       </NavLink>
+
+      <NavLink
+        to='/recursion'
+        className={({ isActive }) => `navigation__link ${isActive ? "navigation__link_active" : ""}`}
+      >
+        рекурсия
+      </NavLink>
     </nav>
   );
 }

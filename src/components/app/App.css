@@ -10,6 +10,8 @@
   margin: 0 auto;
   justify-content: space-between;
   color: var(--font-color);
+
+  padding: 0 10px;
 }
 
 .app_theme_light {
