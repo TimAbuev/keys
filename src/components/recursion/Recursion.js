@@ -1,20 +1,20 @@
 import './Recursion.css';
 import React from 'react';
 
-// function f1(n) {
-//   let result = 1;
-//   for (let i = 2; i <= n; i++) {
-//       result *= i; // result = result * i
-//       // result = 1 * 2 = 2
-//       // result = 2 * 3 = 6
-//       // result = 6 * 4 = 24
-//   }
-//   return result;
-// }
+function countFactorialByCycle(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+      result *= i; // result = result * i
+      // result = 1 * 2 = 2
+      // result = 2 * 3 = 6
+      // result = 6 * 4 = 24
+  }
+  return result;
+}
 
-function f1(n) {
+function countFactorialByRecursion(n) {
   if (n === 0) return 1;
-  else return f1(n - 1) * n;
+  else return countFactorialByRecursion(n - 1) * n;
 }
 
 function f2() {
@@ -52,10 +52,9 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
-let sum = 0;
-
 // Рекурсивное решение
 
+let sum = 0;
 function moneyRecursion() {
   if (sum >= 300) return;
   let m = randomInteger(0, 100);
@@ -89,7 +88,7 @@ function Recursion() {
 
   const [array, setArray] = React.useState([]);
   const newArray = [];
-  newArray.split(' ');
+  // newArray.split('.');
 
   React.useEffect(() => {
     setArray(newArray);
@@ -146,8 +145,10 @@ function Recursion() {
 
   return (
     <section className="experience">
-      <p className='experience__paragraph'>(тема рекурсия)array: {array}</p>
-      {/* <p className='experience__paragraph'>Результат работы функции: {array}</p> */}
+      <p className='experience__paragraph'>Результат работы функции countFactorialByCycle: {countFactorialByCycle(4)}</p>
+      <p className='experience__paragraph'>Результат работы функции countFactorialByRecursion: {countFactorialByRecursion(4)}</p>
+      {/* <p className='experience__paragraph'>(тема рекурсия)array: {array}</p> */}
+      
     </section>
   );
 }

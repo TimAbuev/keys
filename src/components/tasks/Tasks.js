@@ -56,13 +56,34 @@ function to24hourtime(hour, minute, period) {
   return result;
 }
 
+function getProperty(obj, path) {
+  let arr = path.split('.');
 
+  for(let i = 0; i < arr.length; i++) {
+    obj = obj[arr[i]];
+  }
+  return obj;
+}
+
+const object = {
+  one: 1,
+  two: {
+    three: {
+      egg: 'pet',
+    }
+  },
+  four: 4
+};
 
 function Tasks() {
   return (
     <section className="tasks">
       <p>Результат работы функции charConcat: {charConcat('honda')}</p>
       <p>Результат работы функции to24hourtime: {to24hourtime(1, 0, 'pm')}</p>
+      <p>Результат работы функции getProperty: {
+        getProperty(object, 'two.three.egg') // 3
+      }
+      </p>
     </section>
   );
 }
