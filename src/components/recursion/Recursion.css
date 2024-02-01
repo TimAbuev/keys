@@ -1,0 +1,29 @@
+.recursion__figure {
+  align-self: center;
+  border: 1px solid red;
+  height: 20px;
+  width: 100px;
+}
+
+.recursion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rotation {
+  animation-name: rotation;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

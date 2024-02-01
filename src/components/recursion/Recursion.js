@@ -1,47 +1,30 @@
 import './Recursion.css';
 import React from 'react';
+import { useState, useEffect } from 'react';
 
 function countFactorialByCycle(n) {
   let result = 1;
   for (let i = 2; i <= n; i++) {
-      result *= i; // result = result * i
-      // result = 1 * 2 = 2
-      // result = 2 * 3 = 6
-      // result = 6 * 4 = 24
+    result *= i;
   }
   return result;
 }
 
+// непонятный вариант вычисления
 function countFactorialByRecursion(n) {
   if (n === 0) return 1;
   else return countFactorialByRecursion(n - 1) * n;
 }
 
-function f2() {
-  let out = '';
-  for (let i = 1; i <= 200; i++) {
-    // out += i + ' ';
-    out = out + i + ' ';
+// понятный вариант вычисления
+let s = 1;
 
-    // '$' = '$' + 1;
-    // '$1' = '$1' + 2;
-    // '$12' = '$12' + 3;
-    // '$123' = '$123' + 4;
-  }
-  return out;
+function calcFactByRec(n) {
+  if (n === 0) return;
+  s = s * n;
+  calcFactByRec(n - 1);
 }
 
-function f3() {
-  let out = 0;
-  for (let i = 1; i <= 4; i++) {
-    out = out + i;
-    // 0 = 0 + 1;
-    // 1 = 1 + 2;
-    // 3 = 3 + 3;
-    // 6 = 6 + 4;
-  }
-  return out;
-}
 // урок из
 // https://www.youtube.com/watch?v=bh5TKVync9M
 
@@ -53,7 +36,6 @@ function randomInteger(min, max) {
 }
 
 // Рекурсивное решение
-
 let sum = 0;
 function moneyRecursion() {
   if (sum >= 300) return;
@@ -65,7 +47,6 @@ function moneyRecursion() {
 }
 
 // Циклическое решение
-
 function moneyCycle() {
   while (true) {
     if (sum >= 300) return;
@@ -76,79 +57,42 @@ function moneyCycle() {
   }
 }
 
-function showSmth() {
-  moneyCycle();
-  return sum;
-}
-
-
 
 function Recursion() {
-  // задача с выводом дочерних элементов
+  const [animationActive, setAnimationActive] = useState(false);
 
-  const [array, setArray] = React.useState([]);
-  const newArray = [];
-  // newArray.split('.');
+  useEffect(() => {
+    handleAnimationClick();
+  }, [])
 
-  React.useEffect(() => {
-    setArray(newArray);
-  }, []);
-
-  React.useEffect(() => {
-    for (let key in users) {
-      userParentRecursion(users[key]);
-    }
-  }, []);
-
-  const users = {
-    "ivanov": {
-      age: 25,
-      favColor: 'red',
-      parent: {
-        "ivanov-b": {
-          age: 43,
-          favColor: 'white',
-          parent: {
-            "sergeev-a": {
-              age: 88,
-              parent: {
-                "lionenko": {}
-              }
-            }
-          }
-        }
-      }
-    },
-    "kostenko": {
-      age: 56,
-      parent: {
-        "ignatenko": {
-
-        },
-        "sniezko": {
-          age: 45
-        }
-      }
-    }
+  function handleAnimationClick() {
+    setAnimationActive(!animationActive);
   }
+  // let position = 0;
 
-  function userParentRecursion(obj) {
+  // function recursionAnimation() {
+  //   position = position + 5;
+  //   if (position > 500) return;
 
-    if (obj.parent !== undefined) {
-      for (let key in obj.parent) {
-        console.log(key);
-        newArray.push(key);
-        userParentRecursion(obj.parent[key]);
-      }
-    }
-  }
+  //   document.querySelector('.recursion__figure').style.left = position + 'px';
+  //   animation();
+  // }
+
+  // function animation() {
+  //   setTimeout(recursionAnimation, 100);
+  //   console.log('animation is activated');
+  // }
+
+  // animation();
+
 
   return (
-    <section className="experience">
-      <p className='experience__paragraph'>Результат работы функции countFactorialByCycle: {countFactorialByCycle(4)}</p>
-      <p className='experience__paragraph'>Результат работы функции countFactorialByRecursion: {countFactorialByRecursion(4)}</p>
-      {/* <p className='experience__paragraph'>(тема рекурсия)array: {array}</p> */}
-      
+    <section className="recursion">
+      <div
+        className={`recursion__figure ${animationActive ? 'rotation' : ''}`}
+        onClick={handleAnimationClick}
+      ></div>
+      <p className='recursion__paragraph'>Результат работы функции : { }</p>
     </section>
   );
 }
