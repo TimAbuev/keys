@@ -1,4 +1,4 @@
-import './Experience.css';
+import './Experiment.css';
 
 const users = {
   "ivanov": {
@@ -46,15 +46,15 @@ for(let key in users) {
 }
 
 
-function Experience() {
+function Experiment() {
   return (
-    <section className="experience">
-      <div className='experience__figure'></div>
-      <p className='experience__paragraph'>Exp</p>
+    <section className="Experiment">
+      <div className='Experiment__figure'></div>
+      <p className='Experiment__paragraph'>Exp</p>
       {/* <p>Результат работы функции newF: {newF(12)}</p> */}
-      <p className='experience__paragraph'>Результат работы функции: { }</p>
+      <p className='Experiment__paragraph'>Результат работы функции: { }</p>
     </section>
   );
 }
 
-export default Experience;
+export default Experiment;
