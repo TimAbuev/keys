@@ -21,7 +21,7 @@ function Navigation() {
       </NavLink>
 
       <NavLink
-        to='/experience'
+        to='/experiment'
         className={({ isActive }) => `navigation__link ${isActive ? "navigation__link_active" : ""}`}
       >
         эксперименты

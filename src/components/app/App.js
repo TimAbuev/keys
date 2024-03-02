@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from '../header/Header';
 import Tasks from '../tasks/Tasks';
 import Footer from '../footer/Footer';
-import Experience from '../experience/Experience';
+import Experiment from '../experiment/Experiment';
 import Recursion from '../recursion/Recursion';
 
 function App() {
@@ -35,10 +35,10 @@ function App() {
         }>
         </Route>
 
-        <Route path="/experience" element={
+        <Route path="/experiment" element={
           <>
             <Header />
-            <Experience />
+            <Experiment />
             <Footer />
           </>
         }>
